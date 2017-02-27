@@ -1,0 +1,20 @@
+---
+- hosts: local
+  ansible_become_user: sudo
+
+  - name: Install packages
+  package: name={{item}} state=latest
+  with_items:
+    - git
+    - zsh
+    - guake
+    - compton
+    - atom
+    - nodejs
+    - npm
+    - ruby
+    - powerline
+
+
+    - name: Install oh my zsh
+      command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
