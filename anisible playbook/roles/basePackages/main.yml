@@ -14,4 +14,7 @@ become_user: sudo
     - python-setuptools
     - powerline
     - powerline-fons
-    
+    - mpv
+
+- name: install nerds font
+  aur: name=nerd-fonts-complete user={{ lookup('env','USER') }} 

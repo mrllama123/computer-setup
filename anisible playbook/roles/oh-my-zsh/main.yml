@@ -7,3 +7,5 @@
   dest: ~/dotfiles
 
 - name: copy config files over
+  shell: /bin/cp -fr ~/dotfiles ~/
+  

@@ -1,0 +1,9 @@
+---
+become_user: sudo
+- name: install i3
+  pacman: name=i3
+
+- name: install i3 code blocks
+  aur: name=i3blocks user= {{ user.name }}
+
+- include: rofi.yml

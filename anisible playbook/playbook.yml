@@ -6,3 +6,4 @@
   roles:
     - basePackages
     - oh-my-zsh
+    - i3
