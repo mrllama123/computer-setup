@@ -1,9 +1,0 @@
----
-- hosts: local
-  gather_facts: yes
-
-
-  roles:
-    - basePackages
-    - oh-my-zsh
-    - i3
