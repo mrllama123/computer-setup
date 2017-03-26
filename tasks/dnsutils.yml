@@ -1,5 +1,0 @@
----
-- name: Install DNS Utilities
-  #pacman: name="dnsutils" state="present"
-  pacman: name="bind-tools" state="present"
-  become: yes

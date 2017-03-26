@@ -4,15 +4,10 @@
   connection: local
   gather_facts: no
 
-  #vars_prompt:
-  #  - name: config_file
-  #    prompt: "Which vars should I load?"
-  #    private: no
-
   vars_files:
     - vars/all.yml
-    - vars/home-pc.yml
-    #- vars/{{ config_files }}.yml
+
+
 
 
   tasks:
@@ -25,6 +20,7 @@
     - include: tasks/fonts-desktop.yml
     - include: tasks/oracle-java.yml
     - include: tasks/nmap.yml
+    - include: tasks/ssh.yml
 
     - include: tasks/vim.yml user={{ user_item }}
       with_items: '{{ users_inc_super }}'
