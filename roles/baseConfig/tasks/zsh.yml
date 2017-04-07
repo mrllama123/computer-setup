@@ -1,0 +1,41 @@
+---
+
+- name: Install Rofi
+  become: yes
+  pacman: name="zsh" state="present"
+
+- name: clone dotfiles
+  become: yes
+  become_user: "{{ primary_non_root_user }}"
+  git:
+    repo: https://github.com/mrllama123/dotfiles.git
+    dest: ~/dotfiles
+
+
+- name: Clone oh-my-zsh
+  become: yes
+  become_user: "{{ primary_non_root_user }}"
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: ~/.oh-my-zsh
+
+
+- name: Copy dotfiles over
+  become: yes
+  run_once: true
+  become_user: "{{ primary_non_root_user }}"
+  shell: cp -fr ~/dotfiles/*  $HOME/
+
+- name: remove unused files
+  become: yes
+  run_once: true
+  become_user: "{{ primary_non_root_user }}"
+  shell: rm -rf .git README.md
+
+
+- name: Change default shell
+  become: yes
+  run_once: true
+  become_user: "{{ primary_non_root_user }}"
+  shell: chsh -s /bin/zsh
+

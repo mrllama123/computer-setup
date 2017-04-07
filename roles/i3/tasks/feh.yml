@@ -1,0 +1,4 @@
+---
+- name: Install feh
+  become: yes
+  pacman: name="feh" state="present"

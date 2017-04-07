@@ -3,9 +3,9 @@
   become: yes
   pacman: name="i3-gaps" state="present"
 
-- name: Install i3-exit
+- name: Install i3exit
   become: yes
-  pacman: name="i3-exit" state="present"
+  pacman: name="i3exit" state="present"
 
 - name: Install i3-lock
   become: yes

@@ -1,0 +1,6 @@
+---
+- name: Install vscode
+  yaourt: name="visual-studio-code" state="present"
+  become: yes
+  become_user: "{{ primary_non_root_user }}"
+

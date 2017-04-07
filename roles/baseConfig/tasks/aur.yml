@@ -1,0 +1,4 @@
+---
+- name: "Install Yaourt"
+  pacman: name="yaourt" state="present"
+  become: yes

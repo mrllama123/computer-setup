@@ -1,0 +1,7 @@
+---
+- include: baseSoftware.yml
+- include: aur.yml
+- include: fonts-terminal.yml
+- include: fonts-desktop.yml
+- include: oracle-java.yml
+- include: nmap.yml

@@ -1,0 +1,4 @@
+---
+- name: Install atom
+  become: yes
+  pacman: name="atom" state="present"

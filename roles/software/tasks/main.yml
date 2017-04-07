@@ -1,0 +1,31 @@
+---
+# Internet
+# --------
+- include: google-chrome.yml
+- include: transmission.yml
+- include: filezilla.yml
+
+
+# Collaboration
+# -------------
+
+
+# Sound & Video
+# -------------
+- include: mpv.yml
+
+
+# Office
+# ------
+
+# Programming
+# -----------
+- include: intellij.yml
+- include: atom.yml
+- include: vscode.yml
+- include: languages.yml
+
+#
+# Virtualisation
+# --------------
+- include: qemu.yml
