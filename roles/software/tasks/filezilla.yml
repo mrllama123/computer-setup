@@ -1,4 +1,0 @@
----
-- name: "Install FileZilla"
-  pacman: name="filezilla" state="present"
-  become: yes

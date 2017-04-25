@@ -7,54 +7,9 @@
   vars_files:
     - vars/all.yml
 
+  roles:
+    - baseConfig
+    - i3
+    - software
 
-
-
-  tasks:
-    #######################
-    # Basic configuration #
-    #######################
-    - include: tasks/i3.yml
-    - include: tasks/rofi.yml
-    - include: tasks/fonts-terminal.yml
-    - include: tasks/fonts-desktop.yml
-    - include: tasks/oracle-java.yml
-    - include: tasks/nmap.yml
-    - include: tasks/ssh.yml
-
-    - include: tasks/vim.yml user={{ user_item }}
-      with_items: '{{ users_inc_super }}'
-      loop_control:
-        loop_var: user_item
-
-    ########################
-    #       SOFTWARE       #
-    ########################
-
-    # Internet
-    # --------
-    - include: tasks/google-chrome.yml
-    - include: tasks/transmission.yml
-    - include: tasks/filezilla.yml
-
-
-    # Collaboration
-    # -------------
-
-
-    # Sound & Video
-    # -------------
-    - include: tasks/mpv.yml
-
-
-    # Office
-    # ------
-
-    # Programming
-    # -----------
-    - include: tasks/intellij.yml
-
-    #
-    # Virtualisation
-    # --------------
-    - include: tasks/qemu.yml
+  

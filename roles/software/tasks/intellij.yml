@@ -1,4 +1,0 @@
----
-- name: "Install intellij"
-  pacman: name="intellij-idea-community-edition" state="present"
-  become: yes

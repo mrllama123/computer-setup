@@ -1,9 +1,17 @@
 ---
 # Internet
 # --------
-- include: google-chrome.yml
-- include: transmission.yml
-- include: filezilla.yml
+- name: Install Internet packages
+  become: yes
+  pacman: name={{item}} state="present"
+  with_items:
+    - transmission-gtk
+    - filezilla
+
+- name: Google Chrome
+  yaourt: name="google-chrome" state="present"
+  become: yes
+  become_user: "{{ primary_non_root_user }}"
 
 
 # Collaboration
@@ -12,7 +20,11 @@
 
 # Sound & Video
 # -------------
-- include: mpv.yml
+- name: Install Internet packages
+  become: yes
+  pacman: name={{item}} state="present"
+  with_items:
+    - mpv
 
 
 # Office
@@ -23,9 +35,29 @@
 - include: intellij.yml
 - include: atom.yml
 - include: vscode.yml
-- include: languages.yml
+
+- name: Install dev tools packages
+  become: yes
+  pacman: name={{item}} state="present"
+  with_items:
+    - intellij-idea-community-edition
+    - atom
+    - visual-studio-code
+
+- name: Install dev languages
+  become: yes
+  pacman: name={{item}} state=latest
+  with_items:
+    - go
+    - ruby
 
 #
 # Virtualisation
 # --------------
 - include: qemu.yml
+- name: Install Qemu
+  pacman: name={{ item }} state="present"
+  with_items:
+    - qemu
+    - qemu-launcher
+  become: yes

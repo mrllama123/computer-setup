@@ -1,4 +1,0 @@
----
-- name: "Install MPV"
-  pacman: name="mpv" state="present"
-  become: yes

@@ -1,6 +1,0 @@
-- name: Install dev languages
-  become: yes
-  pacman: name={{item}} state=latest
-  with_items:
-    - go
-    - ruby
