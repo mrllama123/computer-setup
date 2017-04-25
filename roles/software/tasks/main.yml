@@ -54,7 +54,6 @@
 #
 # Virtualisation
 # --------------
-- include: qemu.yml
 - name: Install Qemu
   pacman: name={{ item }} state="present"
   with_items:
