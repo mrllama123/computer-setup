@@ -1,4 +1,18 @@
 ---
+# System
+# --------
+- name: Install base packages
+  become: yes
+  pacman: name={{item}} state="present"
+  with_items:
+    - git
+    - wget
+    - vim
+    - compton
+    - guake
+    - variety
+    - nmap
+
 # Internet
 # --------
 - name: Install Internet packages
@@ -7,15 +21,13 @@
   with_items:
     - transmission-gtk
     - filezilla
+    - vivaldi
 
 - name: Google Chrome
   yaourt: name="google-chrome" state="present"
   become: yes
   become_user: "{{ primary_non_root_user }}"
 
-
-# Collaboration
-# -------------
 
 
 # Sound & Video
@@ -27,15 +39,8 @@
     - mpv
     - vlc
 
-
-# Office
-# ------
-
 # Programming
 # -----------
-- include: intellij.yml
-- include: atom.yml
-- include: vscode.yml
 
 - name: Install dev tools packages
   become: yes
@@ -56,6 +61,13 @@
   yaourt: name="google-chrome" state="present"
   become: yes
   become_user: "{{ primary_non_root_user }}"
+
+- name: Install terraform
+  yaourt: name="jdk" state="present"
+  become: yes
+  become_user: "{{ primary_non_root_user }}"
+
+
 
 #
 # Virtualisation

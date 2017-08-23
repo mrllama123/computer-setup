@@ -9,7 +9,6 @@
 
   roles:
     - baseConfig
-    - i3
     - software
 
   
