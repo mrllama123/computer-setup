@@ -46,6 +46,10 @@
   become: yes
   become_user: "{{ primary_non_root_user }}"
 
+- name: Vivaldi
+  yaourt: name="vivaldi" state="present"
+  become: yes
+  become_user: "{{ primary_non_root_user }}"
 
 
 # Sound & Video
