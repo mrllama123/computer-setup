@@ -13,6 +13,24 @@
     - variety
     - nmap
 
+# Theming
+# --------
+- name: Install Theming packges
+  become: yes
+  pacman: name={{item}} state="present"
+  with_items:
+    - variety
+    - conky
+    - arc-gtk-theme 
+
+- name: numix icons 
+  yaourt: name={{item}} state="present"
+  become: yes
+  become_user: "{{ primary_non_root_user }}"
+  with_items:
+    - numix-icon-theme-git
+    - numix-circle-icon-theme-git
+
 # Internet
 # --------
 - name: Install Internet packages
