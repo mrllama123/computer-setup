@@ -10,8 +10,11 @@
     - vim
     - compton
     - guake
-    - variety
     - nmap
+    - zsh
+    - binutils
+    - compiz-manjaro
+
 
 # Theming
 # --------
@@ -69,7 +72,7 @@
   with_items:
     - intellij-idea-community-edition
     - atom
-    - visual-studio-code
+
 
 - name: Install dev languages
   become: yes
@@ -77,13 +80,14 @@
   with_items:
     - go
     - ruby
+    - terraform
 
-- name: Install terraform
-  yaourt: name="google-chrome" state="present"
+- name: Install vscode
+  yaourt: name="visual-studio-code" state="present"
   become: yes
   become_user: "{{ primary_non_root_user }}"
 
-- name: Install terraform
+- name: Install jdk
   yaourt: name="jdk" state="present"
   become: yes
   become_user: "{{ primary_non_root_user }}"
