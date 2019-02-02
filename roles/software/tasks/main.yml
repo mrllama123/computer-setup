@@ -1,5 +1,5 @@
 ---
-#- include: zsh.yml
+- include: zsh.yml
 - include: base.yml
 - include: vscode.yml
 - include: docker.yml
