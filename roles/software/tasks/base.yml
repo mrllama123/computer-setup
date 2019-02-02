@@ -1,0 +1,5 @@
+---
+- name: install base packages
+  apt: 
+    name: ['git', 'zsh', 'synaptic', 'guake', 'compton', 'numix-icon-theme-circle', 'arc-theme', 'software-properties-common', 'curl'] 
+    state: "present"

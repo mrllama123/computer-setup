@@ -1,6 +1,6 @@
 ---
 primary_non_root_user: bob
-
+visual_studio_code_version: ''
 users_inc_super:
   - bob
   - root
