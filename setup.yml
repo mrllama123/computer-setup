@@ -8,7 +8,8 @@
     - vars/all.yml
 
   roles:
-    - software
+    - software_ubuntu
+    - software_manjaro
     - config
 
   

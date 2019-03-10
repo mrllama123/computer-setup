@@ -1,0 +1,10 @@
+---
+- include: zsh.yml
+  when: ansible_distribution == "Ubuntu"
+- include: base.yml
+  when: ansible_distribution == "Ubuntu"
+- include: vscode.yml
+  when: ansible_distribution == "Ubuntu"
+- include: docker.yml
+  when: ansible_distribution == "Ubuntu"
+
