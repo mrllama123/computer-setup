@@ -3,7 +3,7 @@
   pacman:
     name: [ 'git', 'zsh', 'wget', 'nmap', 'vim', 'arc-gtk-theme', 'mpv', 'binutils', 'docker' ]
     state: present
-  when: ansible_distribution == "Manjaro"
+  when: ansible_distribution == "ArchLinux"
 
 # setup zsh
 
