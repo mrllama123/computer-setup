@@ -6,6 +6,6 @@ anisible playbook that automates installing the packages i need for my linux mac
 sudo pacman -S ansible
 git clone https://github.com/mrllama123/computer-setup.git
 cd computer-setup
-ansible-playbook setup.yml --sudo --ask-sudo-pass
+ansible-playbook setup.yml  --ask-sudo-pass
 
 ```

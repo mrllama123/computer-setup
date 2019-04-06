@@ -1,0 +1,35 @@
+---
+- name: install base software
+  pacman:
+    name: [ 'git', 'zsh', 'wget', 'nmap', 'vim', 'arc-gtk-theme', 'mpv', 'binutils', 'docker' ]
+    state: present
+  when: ansible_distribution == "ArchLinux"
+
+# setup zsh
+
+- name: Backing up existing ~/.zshrc
+  become: no
+  become_user: "{{ primary_non_root_user }}"
+  shell: if [ -f ~/.zshrc ]; then mv ~/.zshrc{,.orig}; fi
+  #when: installation|success
+
+
+- name: Cloning  oh-my-zsh
+  become: no
+  become_user: "{{ primary_non_root_user }}"
+  git:
+    repo=https://github.com/robbyrussell/oh-my-zsh
+    dest=~/.oh-my-zsh
+  #when: installation|success
+  register: cloning
+
+- name: Creating new ~/.zshrc
+  become_user: "{{ primary_non_root_user }}"
+  become: no
+  copy:
+    src=~/.oh-my-zsh/templates/zshrc.zsh-template
+    dest=~/.zshrc
+  #when: cloning|success
+
+- name: change user shell to zsh
+  command: chsh -s /bin/zsh "{{ primary_non_root_user }}"

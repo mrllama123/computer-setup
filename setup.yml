@@ -1,14 +1,15 @@
 ---
 - hosts: localhost
-  become: no
+  become: true
   connection: local
-  gather_facts: no
+  gather_facts: yes
 
   vars_files:
     - vars/all.yml
 
   roles:
-    - baseConfig
-    - software
+    - software_ubuntu
+    - software_manjaro
+    - config
 
   
