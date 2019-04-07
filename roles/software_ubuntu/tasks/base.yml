@@ -4,9 +4,9 @@
     name: ['git', 'zsh', 'synaptic', 'guake', 'compton', 'numix-icon-theme-circle', 'arc-theme', 'software-properties-common', 'curl'] 
     state: "present"
 
-- name: "install snap base packages"
-  snap:
-    name:
-      - intellij-idea-community
-      - spotify
-    state: present
+# - name: "install snap base packages"
+#   snap:
+#     name:
+#       - intellij-idea-community
+#       - spotify
+#     state: present

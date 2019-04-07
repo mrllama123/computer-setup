@@ -1,4 +1,0 @@
----
-- name: Install feh
-  become: yes
-  pacman: name="volumeicon" state="present"

@@ -1,4 +1,6 @@
 ---
+
+# git setup
 - name: Setup default git configuraiton
   become: no
   git_config:
