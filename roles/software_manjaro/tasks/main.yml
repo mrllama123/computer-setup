@@ -1,9 +1,24 @@
 ---
 - name: install base software
   pacman:
-    name: [ 'git', 'zsh', 'wget', 'nmap', 'vim', 'arc-gtk-theme', 'mpv', 'binutils', 'docker', 'guake' ]
+    name: [ 
+      'git', 
+      'zsh', 
+      'wget', 
+      'nmap', 
+      'vim', 
+      'arc-gtk-theme', 
+      'mpv', 
+      'binutils', 
+      'docker', 
+      'guake', 
+      'docker-compose' 
+    ]
     state: present
   when: ansible_distribution == "Archlinux"
 
 - include: zsh.yml
+  when: ansible_distribution == "Archlinux"
+
+- include: docker.yml
   when: ansible_distribution == "Archlinux"

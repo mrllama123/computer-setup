@@ -1,0 +1,17 @@
+---
+- name: Enable and start Docker service
+  systemd:
+    name: docker.service
+    enabled: True
+    state: started
+
+- name: Ensure docker group is added
+  group:
+    name: docker
+    state: present
+
+- name: Add the user 'bob' to the docker group
+  user:
+    name: bob
+    group: docker
+    state: present
