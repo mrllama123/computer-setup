@@ -1,8 +1,0 @@
----
-- name: "Install Yaourt"
-  pacman: name="yaourt" state="present"
-  become: yes
-
-- name: "Install Fakeroot"
-  pacman: name="fakeroot" state="present"
-  become: yes

@@ -1,9 +1,0 @@
----
-- name: Update 'pacman' cache
-  become: yes
-  pacman:
-    update_cache: true
-- name: Update Arch Linux via 'pacman'
-  become: yes
-  pacman:
-    upgrade: yes
