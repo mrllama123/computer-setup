@@ -9,7 +9,6 @@
 
   roles:
     - software_ubuntu
-    - software_manjaro
     - config
 
   
